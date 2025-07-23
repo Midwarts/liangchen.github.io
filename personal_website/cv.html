@@ -1,0 +1,67 @@
+<!-- ======================================================================= -->
+<!-- FILE: cv.html                                                           -->
+<!-- INSTRUCTIONS: Save this code as 'cv.html'                               -->
+<!-- ======================================================================= -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Chen Liang</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #fdfdfd; color: #1a1a1a; }
+        .nav-link { transition: color 0.3s ease; }
+        .nav-link.active { color: #1a1a1a; font-weight: 600; }
+        .nav-link:not(.active):hover { color: #737373; }
+    </style>
+</head>
+<body class="antialiased flex flex-col min-h-screen">
+
+    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-200">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0">
+                    <a href="home.html" class="text-2xl font-bold tracking-tight text-gray-900">Chen Liang</a>
+                </div>
+                <nav class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="home.html" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-500">Home</a>
+                        <a href="academic.html" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-500">Academic</a>
+                        <a href="media-practice.html" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-500">Media Practice</a>
+                        <a href="cv.html" class="nav-link active px-3 py-2 rounded-md text-sm font-medium text-gray-500">CV</a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <section class="bg-gray-50/70 py-16 sm:py-20 h-full flex items-center">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                 <h2 class="text-3xl font-extrabold text-gray-900">Curriculum Vitae</h2>
+                 <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-600">For a comprehensive overview of my academic work, professional experience, publications, and awards, please download my full Curriculum Vitae.</p>
+                 <div class="mt-8 flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
+                     <a href="path/to/your/cv.pdf" download="Chen_Liang_CV.pdf" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gray-800 hover:bg-gray-700 transition w-full sm:w-auto">
+                         Download CV (PDF)
+                     </a>
+                     <a href="path/to/your/cv.docx" download="Chen_Liang_CV.docx" class="inline-flex items-center justify-center px-6 py-3 border border-gray-300 text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 transition w-full sm:w-auto">
+                         Download CV (DOCX)
+                     </a>
+                 </div>
+                 <p class="mt-4 text-sm text-gray-500">PDF format is recommended for professional and academic review.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-white border-t border-gray-200">
+        <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 text-center text-sm text-gray-500">
+            <p>&copy; 2025 Chen Liang. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

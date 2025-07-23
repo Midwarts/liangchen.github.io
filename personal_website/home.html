@@ -1,0 +1,95 @@
+<!-- ======================================================================= -->
+<!-- FILE: index.html (Home Page)                                            -->
+<!-- INSTRUCTIONS: Save this code as 'index.html'                            -->
+<!-- ======================================================================= -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chen Liang</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #fdfdfd; color: #1a1a1a; }
+        .nav-link { transition: color 0.3s ease; }
+        .nav-link.active { color: #1a1a1a; font-weight: 600; }
+        .nav-link:not(.active):hover { color: #737373; }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-200">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0">
+                    <a href="home.html" class="text-2xl font-bold tracking-tight text-gray-900">Chen Liang</a>
+                </div>
+                <nav class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="home.html" class="nav-link active px-3 py-2 rounded-md text-sm font-medium text-gray-500">Home</a>
+                        <a href="academic.html" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-500">Academic</a>
+                        <a href="media-practice.html" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-500">Media Practice</a>
+                        <a href="cv.html" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-500">CV</a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="py-16 sm:py-20">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
+                    <div class="md:col-span-2">
+                        <h1 class="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl mb-6">Chen Liang 梁晨</h1>
+                        <div class="prose prose-lg text-gray-600 max-w-none">
+                            <p>I am a researcher exploring the ethical and societal implications of digital platforms and artificial intelligence. I am interested in the intersection of technology and social culture in the lens of communication and journalism. </p>
+                            <br>
+                            <p>Leveraging a mixed-methods approach that combines computational analysis (SQL, Python, R) with qualitative fieldwork, I translated complex user insights at global tech companies like TikTok and Kuaishou into novel academic findings. I hope to inform the development of more equitable and responsible AI, while my practical work seeks to build more engaging and ethical digital experiences for a global audience.</p>
+                        </div>
+                    </div>
+                    <div class="md:col-span-1 space-y-8">
+                        <div class="w-full h-auto overflow-hidden rounded-lg shadow-md">
+                            <img src="image/profile.jpg" olt="In Stade de France, Paris, 2024" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-900 border-b pb-2 mb-3">Education</h3>
+                            <p class="font-semibold">Peking University</p>
+                            <p class="text-sm text-gray-600">Master of Communication, 2026</p>
+                            <p class="font-semibold mt-2">Communication University of China</p>
+                            <p class="text-sm text-gray-600">Bachelor of Communication, 2023</p>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-900 border-b pb-2 mb-3">Skills</h3>
+                            <p class="font-semibold">Data Analysis & Visualization:</p>
+                            <p class="text-sm text-gray-600">SQL, SPSS, Python, R, Tableau, Flourish, Gephi</p>
+                            <p class="font-semibold mt-2">Research Methods:</p>
+                            <p class="text-sm text-gray-600">Survey Design, Qualitative Research, Computational Content Analysis</p>
+                             <p class="font-semibold mt-2">Media Production:</p>
+                            <p class="text-sm text-gray-600">Adobe Premiere, Capcut, Live Video Logging, OB</p>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-900 border-b pb-2 mb-3">Contact</h3>
+                            <ul class="space-y-1 text-sm text-gray-600">
+                                <li><strong>Email:</strong> liangc0101@gmail.com</li>
+                                <li><strong>WhatsApp:</strong> (+86) 18027255362</li>
+                                <li><strong>LinkedIn:</strong> <a href="http://linkedin.com/in/chen-liang-4a03b732b" class="nav-link space-y-1 text-sm text-gray-600">Chen's LinkedIn</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-white border-t border-gray-200">
+        <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 text-center text-sm text-gray-500">
+            <p>&copy; 2025 Chen Liang. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
