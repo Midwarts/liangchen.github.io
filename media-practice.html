@@ -7,16 +7,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Media Practice - Chen Liang</title>
+    <title>Professional Practice - Chen Liang</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #fdfdfd; color: #1a1a1a; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #faf7ff;
+            background-image:
+                radial-gradient(circle at 8% 12%, rgba(196, 181, 253, 0.26), transparent 24rem),
+                radial-gradient(circle at 92% 86%, rgba(233, 213, 255, 0.36), transparent 28rem),
+                linear-gradient(135deg, rgba(255, 255, 255, 0.72), rgba(245, 243, 255, 0.58));
+            color: #1a1a1a;
+        }
         .nav-link { transition: color 0.3s ease; }
         .nav-link.active { color: #1a1a1a; font-weight: 600; }
         .nav-link:not(.active):hover { color: #737373; }
+        .practice-canvas {
+            background-color: rgba(221, 214, 254, 0.68);
+            background-image:
+                radial-gradient(circle at 9% 16%, rgba(167, 139, 250, 0.42), transparent 23rem),
+                radial-gradient(circle at 91% 84%, rgba(216, 180, 254, 0.5), transparent 26rem),
+                linear-gradient(135deg, rgba(245, 243, 255, 0.64), rgba(237, 233, 254, 0.78));
+        }
+        .practice-canvas .text-white { color: #1f2937 !important; }
+        .practice-canvas .text-purple-100 { color: #4b5563 !important; }
+        .practice-canvas .text-purple-200 { color: #6b7280 !important; }
+        .section-label { letter-spacing: 0.18em; }
+        .project-rail {
+            display: flex;
+            gap: 1.25rem;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-padding-left: 1rem;
+            padding: 0.5rem 1rem 1.25rem;
+            margin: 0 -1rem;
+            scrollbar-color: rgba(109, 40, 217, 0.5) transparent;
+        }
+        .project-rail::-webkit-scrollbar { height: 0.55rem; }
+        .project-rail::-webkit-scrollbar-track { background: transparent; }
+        .project-rail::-webkit-scrollbar-thumb { background: rgba(109, 40, 217, 0.5); border-radius: 9999px; }
+        .project-card {
+            flex: 0 0 min(20rem, 82vw);
+            scroll-snap-align: start;
+            min-height: 18rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .project-card:hover { transform: translateY(-0.35rem) rotate(-0.35deg); box-shadow: 0 1.5rem 3rem rgba(35, 8, 76, 0.28); }
+        .project-card:focus-within { outline: 3px solid #f5f3ff; outline-offset: 4px; }
+        .project-card h3 { color: #1f2937 !important; }
+        .project-card p { color: #4b5563 !important; }
+        .project-card p:first-child { color: #6b7280 !important; }
+        @media (min-width: 640px) {
+            .project-rail { padding-left: 1.5rem; padding-right: 1.5rem; margin-left: -1.5rem; margin-right: -1.5rem; }
+            .project-card { flex-basis: 24rem; }
+        }
     </style>
         <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-2KW76NND7S"></script>
@@ -47,7 +94,7 @@
             <nav class="hidden md:flex space-x-6">
               <a href="index.html" class="nav-link px-3 py-2 text-sm font-medium text-gray-500 hover:text-black">Home</a>
               <a href="academic.html" class="nav-link px-3 py-2 text-sm font-medium text-gray-500 hover:text-black">Academic</a>
-              <a href="media-practice.html" class="nav-link px-3 py-2 text-sm font-medium text-gray-500 hover:text-black">Media Practice</a>
+              <a href="media-practice.html" class="nav-link active px-3 py-2 text-sm font-medium text-gray-500 hover:text-black" aria-current="page">Professional Practice</a>
               <a href="cv.html" class="nav-link px-3 py-2 text-sm font-medium text-gray-500 hover:text-black">CV</a>
             </nav>
           </div>
@@ -56,71 +103,112 @@
           <div id="mobile-menu" class="hidden md:hidden mt-2 flex flex-col space-y-2">
             <a href="index.html" class="nav-link block px-3 py-2 text-sm font-medium text-gray-500 hover:text-black">Home</a>
             <a href="academic.html" class="nav-link block px-3 py-2 text-sm font-medium text-gray-500 hover:text-black">Academic</a>
-            <a href="media-practice.html" class="nav-link block px-3 py-2 text-sm font-medium text-gray-500 hover:text-black">Media Practice</a>
+            <a href="media-practice.html" class="nav-link active block px-3 py-2 text-sm font-medium text-gray-500 hover:text-black" aria-current="page">Professional Practice</a>
             <a href="cv.html" class="nav-link block px-3 py-2 text-sm font-medium text-gray-500 hover:text-black">CV</a>
           </div>
         </div>
     </header>
 
     <main>
-        <section class="py-16 sm:py-20">
+        <section class="practice-canvas py-16 sm:py-20 overflow-hidden">
             <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center">
-                    <h2 class="text-3xl font-extrabold text-gray-900">Media Practice</h2>
-                    <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-600">Applying data-driven communication skills in global, high-stakes environments, from leading tech platforms to the Olympic Games.</p>
+                <div class="max-w-3xl">
+                    <p class="section-label text-xs font-bold text-purple-200">SELECTED EXPERIENCE</p>
+                    <h1 class="mt-4 text-4xl font-extrabold tracking-tight text-white sm:text-6xl">Professional<br>Practice</h1>
+                    <p class="mt-6 max-w-2xl text-lg leading-relaxed text-purple-100">A collection of work across live broadcast, international media production, and user research—connecting people, platforms, and stories in high-stakes environments.</p>
+                    <p class="mt-5 text-sm text-purple-200">Swipe or scroll horizontally to explore each project.</p>
                 </div>
 
-                <div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-12">
-                    <div>
-                        <h3 class="text-2xl font-bold text-gray-900 mb-6">Technology & User Research</h3>
-                        <div class="space-y-8">
+                <div class="mt-16 space-y-16 sm:space-y-20">
+                    <section aria-labelledby="broadcast-heading">
+                        <div class="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
                             <div>
-                                <p class="font-semibold text-lg">TikTok</p>
-                                <p class="text-sm text-gray-500">Global LIVE User Research Analyst | May 2025 – Jul 2025</p>
-                                <p class="mt-2 text-gray-700">Designed and deployed multilingual surveys across five international markets, leveraging SQL for audience segmentation. My analysis of over 30,000 user responses culminated in quarterly satisfaction reports adopted by product and operations teams. Accelerated qualitative analysis workflow by 40% using AI tools.</p>
+                                <p class="section-label text-xs font-bold text-purple-200">01 / LIVE ENVIRONMENTS</p>
+                                <h2 id="broadcast-heading" class="mt-2 text-3xl font-extrabold text-white sm:text-4xl">Broadcast</h2>
                             </div>
-                            <div>
-                                <p class="font-semibold text-lg">Kuaishou (Kwai)</p>
-                                <p class="text-sm text-gray-500">Global LIVE User Research Analyst | Jan 2023 – Jul 2023</p>
-                                <p class="mt-2 text-gray-700">Conducted user segmentation analysis for livestream audiences in Southeast Asia and LATAM. Delivered actionable insights that contributed to refining the creator incentive program and conducted creator interviews that informed a new lead-collection feature.</p>
-                            </div>
-                             <div>
-                                <p class="font-semibold text-lg">Ipsos</p>
-                                <p class="text-sm text-gray-500">Quantitative User Research | Sep 2022 – Dec 2022</p>
-                                <p class="mt-2 text-gray-700">Focused on quantitative research for major FMCG clients. Responsible for designing bilingual questionnaires and visualizing complex findings in Tableau dashboards, strengthening my data-driven storytelling skills.</p>
-                            </div>
+                            <p class="text-sm text-purple-100">Sports production, venue operations, and live logging.</p>
                         </div>
-                    </div>
-                    <div>
-                        <h3 class="text-2xl font-bold text-gray-900 mb-6">Sports & Broadcast Media</h3>
-                        <div class="space-y-8">
-                            <div>
-                                <p class="font-semibold text-lg">The Snow League</p>
-                                <p class="text-sm text-gray-500">Production Assistant | Beijing 2025</p>
-                                <p class="mt-2 text-gray-700">Assisted the onsite production office by coordinating talent logistics according to the production schedule, maintaining daily operations of the broadcast compound and field of play. Communicated requirements across multiple teams and assisted in allocating resources for the Live Sport Presentation department.</p>
-                            </div>
-                            <div>
-                                <p class="font-semibold text-lg">International Sports Broadcasting</p>
-                                <p class="text-sm text-gray-500">Live Video Logger | Chengdu 2025</p>
-                                <p class="mt-2 text-gray-700">Supported the work of digital archive department, logged The World Games 2025 footage by IP director in EVS system with outstanding accuracy, ensured all deadlines were met; quickly adapted to a fast-paced multi-sport environment and independently mastered event-specific tagging protocols across different disciplines.</p>
-                            </div>
-                            <div>
-                                <p class="font-semibold text-lg">Olympic Broadcasting Services</p>
-                                <p class="text-sm text-gray-500">Live Video Logger | Paris 2024</p>
-                                <p class="mt-2 text-gray-700">In a mission-critical role for the host broadcaster, I was responsible for real-time logging of over 1,500 key match moments of multiple fastest-paced sports including table tennis, athletics and equestrian, ensuring sub-5-second retrieval for global editorial teams for both the Paris 2024 Olympic and Paralympic Games. The role required split-second decision-making, great command of EVS Logging system and agile coordination.</p>
-                            </div>
-                            <div>
-                                <p class="font-semibold text-lg">Olympic Broadcasting Services</p>
-                                <p class="text-sm text-gray-500">Broadcast Assistant / Liaison Officer | Beijing 2022 </p>
-                                <p class="mt-2 text-gray-700">Supported department heads, managers, and staff across multiple teams at the Yanqing National Sliding Centre during the Beijing 2022 Olympic Games, ensuring smooth execution of venue operations and assisting with Athlete Moment content production. Assisted Rights-Holding Broadcasters (RHBs) during the Beijing 2022 Paralympic Games by coordinating commentary positions, managing mixed zone live interview areas, monitoring unilateral camera positions, and staffing the Broadcast Information Office (BIO) at the Main Media Centre (MMC), helping to meet their technical and production needs efficiently.</p>
-                            </div>
-                            <div>
-                                <p class="font-semibold text-lg">CCTV Middle East Bureau</p>
-                                <p class="text-sm text-gray-500">Field Correspondent Intern | Nov 2024 – Apr 2025</p>
-                                <p class="mt-2 text-gray-700">Managed the full production workflow for over 60 news packages and short-form videos in Dubai. Collaborated extensively with local fixers, embassies, and commercial partners, deepening my understanding of media dynamics within the MENA region.</p>
-                            </div>
+                        <div class="project-rail mt-6" aria-label="Broadcast projects">
+                            <article class="project-card rounded-3xl bg-violet-100 p-6 text-violet-950 shadow-2xl shadow-purple-950/20">
+                                <p class="text-xs font-bold tracking-widest text-violet-600">01 / 2025</p>
+                                <h3 class="mt-8 text-2xl font-bold">The Snow League</h3>
+                                <p class="mt-2 text-sm font-medium text-violet-700">Production Assistant · Beijing</p>
+                                <p class="mt-5 text-sm leading-relaxed text-violet-900">Coordinated talent logistics, broadcast-compound operations, and cross-team production requirements for the Live Sport Presentation department.</p>
+                            </article>
+                            <article class="project-card rounded-3xl bg-fuchsia-100 p-6 text-fuchsia-950 shadow-2xl shadow-purple-950/20">
+                                <p class="text-xs font-bold tracking-widest text-fuchsia-600">02 / 2025</p>
+                                <h3 class="mt-8 text-2xl font-bold">International Sports Broadcasting</h3>
+                                <p class="mt-2 text-sm font-medium text-fuchsia-700">Live Video Logger · Chengdu</p>
+                                <p class="mt-5 text-sm leading-relaxed text-fuchsia-900">Logged World Games footage in EVS, met demanding deadlines, and independently mastered event-specific tagging protocols across multiple sports.</p>
+                            </article>
+                            <article class="project-card rounded-3xl bg-purple-50 p-6 text-purple-950 shadow-2xl shadow-purple-950/20">
+                                <p class="text-xs font-bold tracking-widest text-purple-600">03 / 2024</p>
+                                <h3 class="mt-8 text-2xl font-bold">Olympic Broadcasting Services</h3>
+                                <p class="mt-2 text-sm font-medium text-purple-700">Live Video Logger · Paris</p>
+                                <p class="mt-5 text-sm leading-relaxed text-purple-900">Logged more than 1,500 key match moments across table tennis, athletics, and equestrian, enabling sub-five-second retrieval for global editorial teams.</p>
+                            </article>
+                            <article class="project-card rounded-3xl bg-indigo-100 p-6 text-indigo-950 shadow-2xl shadow-purple-950/20">
+                                <p class="text-xs font-bold tracking-widest text-indigo-600">04 / 2022</p>
+                                <h3 class="mt-8 text-2xl font-bold">Olympic Broadcasting Services</h3>
+                                <p class="mt-2 text-sm font-medium text-indigo-700">Broadcast Assistant / Liaison Officer · Beijing</p>
+                                <p class="mt-5 text-sm leading-relaxed text-indigo-900">Supported venue operations, Athlete Moment production, and Rights-Holding Broadcasters across commentary, mixed-zone, camera, and information services.</p>
+                            </article>
                         </div>
-                    </div>
+                    </section>
+
+                    <section aria-labelledby="media-heading">
+                        <div class="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+                            <div>
+                                <p class="section-label text-xs font-bold text-purple-200">02 / STORIES IN MOTION</p>
+                                <h2 id="media-heading" class="mt-2 text-3xl font-extrabold text-white sm:text-4xl">Media</h2>
+                            </div>
+                            <p class="text-sm text-purple-100">Field reporting and international news production.</p>
+                        </div>
+                        <div class="project-rail mt-6" aria-label="Media projects">
+                            <article class="project-card rounded-3xl bg-amber-100 p-6 text-amber-950 shadow-2xl shadow-purple-950/20">
+                                <p class="text-xs font-bold tracking-widest text-amber-700">01 / 2024–2025</p>
+                                <h3 class="mt-8 text-2xl font-bold">CCTV Middle East Bureau</h3>
+                                <p class="mt-2 text-sm font-medium text-amber-800">Field Correspondent Intern · Dubai</p>
+                                <p class="mt-5 text-sm leading-relaxed text-amber-950">Managed the end-to-end production workflow for more than 60 news packages and short-form videos for an international news bureau.</p>
+                            </article>
+                            <article class="project-card rounded-3xl bg-orange-100 p-6 text-orange-950 shadow-2xl shadow-purple-950/20">
+                                <p class="text-xs font-bold tracking-widest text-orange-700">02 / MENA REGION</p>
+                                <h3 class="mt-8 text-2xl font-bold">Cross-cultural Coordination</h3>
+                                <p class="mt-2 text-sm font-medium text-orange-800">Fixers, Embassies &amp; Partners</p>
+                                <p class="mt-5 text-sm leading-relaxed text-orange-950">Collaborated with local fixers, embassies, and commercial partners, building practical knowledge of reporting and media dynamics across the MENA region.</p>
+                            </article>
+                        </div>
+                    </section>
+
+                    <section aria-labelledby="research-heading">
+                        <div class="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+                            <div>
+                                <p class="section-label text-xs font-bold text-purple-200">03 / PEOPLE &amp; PLATFORMS</p>
+                                <h2 id="research-heading" class="mt-2 text-3xl font-extrabold text-white sm:text-4xl">User Research</h2>
+                            </div>
+                            <p class="text-sm text-purple-100">Research that connects global audiences with product decisions.</p>
+                        </div>
+                        <div class="project-rail mt-6" aria-label="User research projects">
+                            <article class="project-card rounded-3xl bg-emerald-100 p-6 text-emerald-950 shadow-2xl shadow-purple-950/20">
+                                <p class="text-xs font-bold tracking-widest text-emerald-700">01 / 2025</p>
+                                <h3 class="mt-8 text-2xl font-bold">TikTok</h3>
+                                <p class="mt-2 text-sm font-medium text-emerald-800">Global LIVE User Research Analyst</p>
+                                <p class="mt-5 text-sm leading-relaxed text-emerald-950">Designed multilingual surveys across five markets and analyzed 30,000+ responses using SQL-driven segmentation for product and operations teams.</p>
+                            </article>
+                            <article class="project-card rounded-3xl bg-teal-100 p-6 text-teal-950 shadow-2xl shadow-purple-950/20">
+                                <p class="text-xs font-bold tracking-widest text-teal-700">02 / 2023</p>
+                                <h3 class="mt-8 text-2xl font-bold">Kuaishou (Kwai)</h3>
+                                <p class="mt-2 text-sm font-medium text-teal-800">Global LIVE User Research Analyst</p>
+                                <p class="mt-5 text-sm leading-relaxed text-teal-950">Conducted audience segmentation and creator interviews in Southeast Asia and LATAM, informing creator incentives and a lead-collection feature.</p>
+                            </article>
+                            <article class="project-card rounded-3xl bg-cyan-100 p-6 text-cyan-950 shadow-2xl shadow-purple-950/20">
+                                <p class="text-xs font-bold tracking-widest text-cyan-700">03 / 2022</p>
+                                <h3 class="mt-8 text-2xl font-bold">Ipsos</h3>
+                                <p class="mt-2 text-sm font-medium text-cyan-800">Quantitative User Research</p>
+                                <p class="mt-5 text-sm leading-relaxed text-cyan-950">Designed bilingual questionnaires and turned complex FMCG research findings into Tableau dashboards and clear, data-driven narratives.</p>
+                            </article>
+                        </div>
+                    </section>
                 </div>
             </div>
         </section>
